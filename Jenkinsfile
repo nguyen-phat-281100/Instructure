@@ -4,8 +4,10 @@ pipeline {
         stage('Clone Repository') {
             steps {
                     git 'https://github.com/nguyen-phat-281100/Instructure'
-                }
-            steps {
+                  }    
+            }
+        stage('Clone Repository') {
+             steps {
                    archiveArtifacts artifacts: '', followSymlinks: false
                 }
             }
