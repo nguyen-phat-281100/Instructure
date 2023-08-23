@@ -5,6 +5,9 @@ pipeline {
             steps {
                     git 'https://github.com/nguyen-phat-281100/Instructure'
                 }
+            steps {
+                   archiveArtifacts artifacts: '', followSymlinks: false
+                }
             }
         }
     }
