@@ -8,7 +8,7 @@ pipeline {
             }
         stage('public artifact') {
              steps {
-                   archiveArtifacts artifacts: '/var/jenkins_home/workspace/artifact/artifact.jar', allowEmptyArchive: true, followSymlinks: false
+                   archiveArtifacts artifacts: '/var/jenkins_home/workspace/artifact/artifact.jar', followSymlinks: false
                 }
             }
         }
