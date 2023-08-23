@@ -8,7 +8,7 @@ pipeline {
             }
         stage('public artifact') {
              steps {
-                   archiveArtifacts artifacts: 'build/**', followSymlinks: false
+                   archiveArtifacts artifacts: 'build/artifact*.*jar', followSymlinks: false
                 }
             }
         }
