@@ -8,7 +8,7 @@ pipeline {
                 }
             steps {
           withCredentials([file(credentialsId: 'credentials_login', variable: 'credentials_login')]) {
-              echo "****************${credentials_login}***********dfsf******"
+              echo "############${credentials_login}############"
                     }
             }
         }
