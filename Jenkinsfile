@@ -20,7 +20,7 @@ pipeline {
                 // }
           withCredentials([file(credentialsId: 'credentials_login', variable: 'credentials_login')]) {
 
-              echo "****************${credentials_login}*****************"
+              echo "****************${credentials_login}***********dfsf******"
              
 }
             }
