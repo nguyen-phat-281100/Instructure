@@ -7,12 +7,6 @@ pipeline {
                   }  
             }
         // ci
-        steps {
-                script {
-                    def checkoutResult = checkout scm
-                    echo "Checkout result: ${checkoutResult}"
-                }
-            }
         // build ci
         
         // cd
