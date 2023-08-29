@@ -10,7 +10,7 @@ pipeline {
 
         stage('Example stage 1') {
             environment {
-                credentials_login = credentials('credentials_loginvd')
+                credentials_login = credentials('credentials_login')
                 }
             steps {
                 // echo "Global property file: ${credentials_login}"
