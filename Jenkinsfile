@@ -27,11 +27,7 @@ pipeline {
                         
               //           echo "Username from secret file: ${username}"
               // echo "**************: ${USERNAME}***************"
-              print 'Username=' + Username + 'Password=' + Password
-
-            print 'Username.collect { it }=' + Username.collect { it }
-            print 'Uassword.collect { it }=' + Password.collect { it }
-}
+           
             }
         }
     }
