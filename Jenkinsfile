@@ -20,12 +20,7 @@ pipeline {
                 // }
           withCredentials([file(credentialsId: 'credentials_login', variable: 'credentials_login')]) {
 
-              // def secretFileContent = readFile(credentials_login).trim()
-              //           def parts = secretFileContent.split('=')
-              //           def username = parts[1]
-                        
-              //           echo "Username from secret file: ${username}"
-              // echo "**************: ${USERNAME}***************"
+              echo "****************${credentials_login}*****************"
              
 }
             }
