@@ -10,10 +10,10 @@ pipeline {
 
         stage('Example stage 1') {
             environment {
-                MY_KUBECONFIG = credentials('credentials_login')
+                credentials_login = credentials('credentials_login')
                 }
             steps {
-                echo "Global property file: ${MY_KUBECONFIG}"
+                echo "Global property file: ${credentials_login}"
                 withCredentials(bindings: [credentials_login(credentialsId: 'credentials_login', \
                                                        usernameVariable: 'Username', \
                                                        passwordVariable: 'Password')]) {
@@ -23,10 +23,10 @@ pipeline {
     }
     post {
         success {
-            echo 'CI/CD pipeline completed successfully!'
+            echo 'pipeline completed successfully!'
         }
         failure {
-            echo 'CI/CD pipeline failed!'
+            echo 'pipeline failed!'
         }
     }
     
