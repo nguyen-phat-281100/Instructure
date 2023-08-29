@@ -14,7 +14,7 @@ pipeline {
             steps {
                 checkout scm
                 echo "*************archive Artifacts***************"
-                archiveArtifacts artifacts: '**/*.txt', followSymlinks: false
+                archiveArtifacts artifacts: '**/artifact.txt', followSymlinks: false
             }
         }
     }
