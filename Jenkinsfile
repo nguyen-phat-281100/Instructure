@@ -2,11 +2,11 @@ pipeline {
     agent any
     
     stages {
-        stage('Clone Repository') {
-            steps {
-                    git 'https://github.com/nguyen-phat-281100/Instructure'
-                  }  
-            }
+        // stage('Clone Repository') {
+        //     steps {
+        //             git 'https://github.com/nguyen-phat-281100/Instructure'
+        //           }  
+        //     }
 
         stage('Example stage 1') {
             environment {
@@ -18,7 +18,7 @@ pipeline {
                 //                                        usernameVariable: 'Username', \
                 //                                        passwordVariable: 'Password')]) {
                 // }
-              withCredentials([file(credentialsId: 'credentials_login', variable: '')]) {
+          withCredentials([file(credentialsId: 'credentials_login', variable: 'usernameVariable: \'Username\', passwordVariable: \'Password\'')]) {
     // some block
 }
             }
