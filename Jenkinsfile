@@ -8,11 +8,11 @@ pipeline {
                 }
             steps {
           withCredentials([string(credentialsId: 'secret_text_id', variable: 'secret_text_variable'), 
-                           file(credentialsId: 'credentials_login', variable: 'Username'),
+                           file(credentialsId: 'credentials_login', variable: 'Username1'),
                           sshUserPrivateKey(credentialsId: 'UserPrivateKeyID', keyFileVariable: 'keyFile', passphraseVariable: 'Passphrase', usernameVariable: 'Username')
                           ]) {
               echo "secret_text_variable: ${secret_text_variable}"
-              echo "credentials_login: ${credentials_login}"
+              echo "credentials_login: ${Username1}"
               echo "credentials_login: ${Username}"
                 }
             }
