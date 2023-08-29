@@ -9,8 +9,8 @@ hopipeline {
         // ci
         stage('Checkout') {
             steps {
-                def checkoutResult = checkout scm
-                    echo "Checkout result: ${checkoutResult}"
+                checkout scm
+                
             }
         }
         // build ci
