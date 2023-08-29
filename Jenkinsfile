@@ -30,6 +30,7 @@ pipeline {
         }
     }
 }
+}
 // withCredentials([file(credentialsId: 'credentials_login', variable: 'usernameVariable: \'Username\', passwordVariable: \'Password\'')]) {
 //     // some block
 // }
