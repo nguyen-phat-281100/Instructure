@@ -18,7 +18,7 @@ pipeline {
                 //                                        usernameVariable: 'Username', \
                 //                                        passwordVariable: 'Password')]) {
                 // }
-          withCredentials([file(credentialsId: 'credentials_login', variable: 'usernameVariable: \'Username\', passwordVariable: \'Password\'')]) {
+          withCredentials([file(credentialsId: 'credentials_login', variable: 'Username')]) {
     // some block
 }
             }
