@@ -13,7 +13,7 @@ pipeline {
                           ]) {
               echo "secret_text_variable: ${secret_text_variable}"
               echo "credentials_login: ${credentials_login}"
-              echo "credentials_login: ${usernameVariable}"
+              echo "credentials_login: ${Username}"
                 }
             }
         }
