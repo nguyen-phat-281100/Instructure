@@ -1,21 +1,19 @@
 pipeline {
     agent any
+    
     stages {
         stage('Clone Repository') {
             steps {
                     git 'https://github.com/nguyen-phat-281100/Instructure'
                   }  
             }
-        // ci
-        // build ci
-        
-        // cd
-        stage('archive Artifacts') {
+
+        stage('Example stage 1') {
+            environment {
+                MY_KUBECONFIG = credentials('credentials_login')
+                }
             steps {
-                checkout scm
-                echo "*************archive Artifacts***************"
-                archiveArtifacts artifacts: '**/*.txt', followSymlinks: false
-            }
+                echo "Global property file: ${MY_KUBECONFIG}"            }
         }
     }
     
