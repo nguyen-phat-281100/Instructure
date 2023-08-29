@@ -13,7 +13,11 @@ pipeline {
                 MY_KUBECONFIG = credentials('credentials_login')
                 }
             steps {
-                echo "Global property file: ${MY_KUBECONFIG}"            }
+                echo "Global property file: ${MY_KUBECONFIG}"
+                withCredentials(bindings: [credentials_login(credentialsId: 'credentials_login', \
+                                                       usernameVariable: 'Username', \
+                                                       passwordVariable: 'Password')]) {
+            }
         }
     }
     
@@ -26,3 +30,6 @@ pipeline {
         }
     }
 }
+// withCredentials([file(credentialsId: 'credentials_login', variable: 'usernameVariable: \'Username\', passwordVariable: \'Password\'')]) {
+//     // some block
+// }
