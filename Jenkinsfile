@@ -12,6 +12,7 @@ pipeline {
         // cd
         stage('archive Artifacts') {
             steps {
+                checkout scm
                 echo "*************archive Artifacts***************"
                 archiveArtifacts artifacts: 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\artifact Instructure pipeline', followSymlinks: false, onlyIfSuccessful: true
             }
