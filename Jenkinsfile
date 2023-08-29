@@ -6,17 +6,29 @@ pipeline {
                     git 'https://github.com/nguyen-phat-281100/Instructure'
                   }  
             }
-        // stage('Create Artifact') {
-        //     steps {
-        //         // Archive the built artifact
-        //         archiveArtifacts artifacts: 'target/*.jar', allowEmptyArchive: true
-        //     }
-        // }
-    //     post {
-    //     always {
-    //         archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
-    //         junit 'build/reports/**/*.xml'
-    //     }
-    // }
+        // ci
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        // build ci
+        
+        // cd
+        stage('archive Artifacts') {
+            steps {
+                archiveArtifacts artifacts: 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\artifact Instructure pipeline', followSymlinks: false, onlyIfSuccessful: true
+            }
+        }
+    }
+    
+    post {
+        success {
+            echo 'CI/CD pipeline completed successfully!'
+        }
+        failure {
+            echo 'CI/CD pipeline failed!'
+        }
+    }
     }
 }
