@@ -1,4 +1,4 @@
-hopipeline {
+pipeline {
     agent any
     stages {
         stage('Clone Repository') {
@@ -7,12 +7,12 @@ hopipeline {
                   }  
             }
         // ci
-        stage('Checkout') {
-            steps {
-                checkout scm
-                
+        steps {
+                script {
+                    def checkoutResult = checkout scm
+                    echo "Checkout result: ${checkoutResult}"
+                }
             }
-        }
         // build ci
         
         // cd
