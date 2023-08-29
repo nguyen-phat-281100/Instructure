@@ -14,10 +14,13 @@ pipeline {
                 }
             steps {
                 echo "Global property file: ${credentials_login}"
-                withCredentials(bindings: [credentials_login(credentialsId: 'credentials_login', \
-                                                       usernameVariable: 'Username', \
-                                                       passwordVariable: 'Password')]) {
-                }
+                // withCredentials(bindings: [credentials_login(credentialsId: 'credentials_login', \
+                //                                        usernameVariable: 'Username', \
+                //                                        passwordVariable: 'Password')]) {
+                // }
+              withCredentials([file(credentialsId: 'credentials_login', variable: '')]) {
+    // some block
+}
             }
         }
     }
