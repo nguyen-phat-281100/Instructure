@@ -14,7 +14,7 @@ pipeline {
             steps {
                 checkout scm
                 echo "*************archive Artifacts***************"
-                archiveArtifacts artifacts: 'C:/ProgramData/Jenkins/.jenkins/workspace/artifact Instructure pipeline/*.jar', followSymlinks: false
+                archiveArtifacts artifacts: '**/*.txt', followSymlinks: false
             }
         }
     }
