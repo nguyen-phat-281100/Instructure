@@ -27,7 +27,8 @@ pipeline {
                         
               //           echo "Username from secret file: ${username}"
               // echo "**************: ${USERNAME}***************"
-           
+             
+}
             }
         }
     }
