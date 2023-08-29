@@ -7,9 +7,11 @@ pipeline {
                 credentials_login = credentials('credentials_login')
                 }
             steps {
-          withCredentials([file(credentialsId: 'credentials_login', variable: 'credentials_login')]) {
+          withCredentials([string(credentialsId: 'secret_text_id', variable: 'secret_text_variable'), 
+                           file(credentialsId: 'credentials_login', variable: 'credentials_login')]) {
+              echo "############${secret_text_variable}############"
               echo "############${credentials_login}############"
-                    }
+                }
             }
         }
     }
