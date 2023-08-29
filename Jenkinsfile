@@ -23,12 +23,6 @@ pipeline {
               echo "****************${credentials_login}***********dfsf******"
              
                     }
-             steps {
-                 script {
-                            def secretFileCredential = credentials('credentials_login')
-                  echo "****************${credentials_login}***********dfsf******"
-                 }
-             }
             }
         }
     }
