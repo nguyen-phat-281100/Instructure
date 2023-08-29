@@ -17,11 +17,10 @@ pipeline {
                 withCredentials(bindings: [credentials_login(credentialsId: 'credentials_login', \
                                                        usernameVariable: 'Username', \
                                                        passwordVariable: 'Password')]) {
-                    // 
+                }
             }
         }
     }
-    
     post {
         success {
             echo 'CI/CD pipeline completed successfully!'
@@ -30,5 +29,5 @@ pipeline {
             echo 'CI/CD pipeline failed!'
         }
     }
-}
+    
 }
