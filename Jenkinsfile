@@ -18,7 +18,8 @@ pipeline {
                 //                                        usernameVariable: 'Username', \
                 //                                        passwordVariable: 'Password')]) {
                 // }
-          withCredentials([file(credentialsId: 'credentials_login', variable: 'credentials_login')]) {
+          withCredentials([file(credentialsId: 'credentials_login',usernameVariable: 'Username',
+              passwordVariable: 'Password')]) {
 
               // def secretFileContent = readFile(credentials_login).trim()
               //           def parts = secretFileContent.split('=')
@@ -26,8 +27,10 @@ pipeline {
                         
               //           echo "Username from secret file: ${username}"
               // echo "**************: ${USERNAME}***************"
-              def username = 'Jenkins'
-echo 'Hello Mr. ${username}'
+              print 'Username=' + Username + 'Password=' + Password
+
+            print 'Username.collect { it }=' + Username.collect { it }
+            print 'Uassword.collect { it }=' + Password.collect { it }
 }
             }
         }
