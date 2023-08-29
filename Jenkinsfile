@@ -30,5 +30,4 @@ pipeline {
             echo 'CI/CD pipeline failed!'
         }
     }
-    }
 }
