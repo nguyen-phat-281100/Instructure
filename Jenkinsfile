@@ -9,7 +9,8 @@ pipeline {
         // ci
         stage('Checkout') {
             steps {
-                checkout scm
+                def checkoutResult = checkout scm
+                    echo "Checkout result: ${checkoutResult}"
             }
         }
         // build ci
