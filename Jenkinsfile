@@ -19,7 +19,7 @@ pipeline {
                 //                                        passwordVariable: 'Password')]) {
                 // }
           withCredentials([file(credentialsId: 'credentials_login', usernameVariable: 'Username', passwordVariable: 'Password')]) {
-              echo "**************: ${usernameVariable}***************"
+              echo "**************: ${USERNAME}***************"
 }
             }
         }
