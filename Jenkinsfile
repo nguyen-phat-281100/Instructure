@@ -1,4 +1,4 @@
-pipeline {
+hopipeline {
     agent any
     stages {
         stage('Clone Repository') {
@@ -18,6 +18,7 @@ pipeline {
         // cd
         stage('archive Artifacts') {
             steps {
+                echo "*************archive Artifacts***************"
                 archiveArtifacts artifacts: 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\artifact Instructure pipeline', followSymlinks: false, onlyIfSuccessful: true
             }
         }
