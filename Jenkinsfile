@@ -10,7 +10,10 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                bat 'dir'
+                bat '
+                dir
+                mkdir Artifacts
+                '
             }
               
         }
