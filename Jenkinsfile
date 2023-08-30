@@ -2,9 +2,6 @@ pipeline {
     agent any
     
     stages {
-        stage ('pull git') {
-            git 'https://github.com/nguyen-phat-281100/Instructure.git'
-        }
         stage ('push artifact') {
             steps {
                 sh 'mkdir archive'
@@ -21,7 +18,7 @@ pipeline {
                 sh 'cat archive_new/test.txt'
             }
         }
-        }
+    }
     
     post {
         success {
