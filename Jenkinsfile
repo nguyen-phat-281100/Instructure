@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     stages {
-        stage ('push artifact') {
+        stage ('artifact') {
             steps {
                  archiveArtifacts artifacts: '**/*.json', followSymlinks: false
             }
@@ -16,22 +16,14 @@ pipeline {
         //     }
         // }
 
-        stage('Deploy') {
-              steps {
-        // Download the archived artifact
-                 copyArtifacts filter: '*.json', 
-                     fingerprintArtifacts: true, 
-                     projectName: 'Instructure pipeline'
-
-        
-        // Read and print the content of the JSON file
-        // script {
-        //     def jsonFilePath = findFiles(glob: 'artifacts/*.json')[0]
-        //     def jsonContent = readFile(jsonFilePath.path)
-        //     echo "JSON Content:\n${jsonContent}"
+        // stage('Deploy') {
+        //       steps {
+        // // Download the archived artifact
+        //          copyArtifacts filter: '*.json', 
+        //              fingerprintArtifacts: true, 
+        //              projectName: 'Instructure pipeline'
+        //       }
         // }
-              }
-        }
     }
     
     post {
