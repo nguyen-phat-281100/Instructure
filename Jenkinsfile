@@ -12,6 +12,10 @@ pipeline {
             steps {
                 bat 'dir'
                 bat 'type jsonfile.json'
+                 copyArtifacts filter: 'jsonfile.json', 
+                     fingerprintArtifacts: true, 
+                     projectName: 'Instructure pipeline'
+                    // target: '**/Artifacts'
             }
               
         }
