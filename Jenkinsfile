@@ -33,6 +33,7 @@ pipeline {
                 // Add your deployment steps here
                 // For example, deploying the JSON content to a service
             }
+        }
     }
     
     post {
