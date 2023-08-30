@@ -7,8 +7,7 @@ pipeline {
                 sh 'mkdir archive'
                 sh 'echo test > archive/test.txt'
                 // zip archive: true, defaultExcludes: false, dir: '', exclude: '', glob: '', overwrite: true, zipFile: 'jsonfile.json'
-                archiveArtifacts artifacts: '**/jsonfile.json', fingerprint: true
-            }
+                archiveArtifacts artifacts: '**/*.json', followSymlinks: false            }
         }
 
         stage('pull artifact') {
