@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage ('artifact') {
             steps {
-                 archiveArtifacts artifacts: '**/*.json', followSymlinks: false
+                 archiveArtifacts artifacts: 'jsonfile.json', followSymlinks: false
             }
         }
 
