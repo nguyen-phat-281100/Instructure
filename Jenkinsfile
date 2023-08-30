@@ -13,6 +13,7 @@ pipeline {
                  copyArtifacts filter: '**/jsonfile.json', 
                      fingerprintArtifacts: true, 
                      projectName: 'Instructure pipeline'
+                    target: '**/Artifacts'
               }
         }
     }
