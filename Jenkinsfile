@@ -17,8 +17,8 @@ pipeline {
               echo "credentials_login: ${Username1}"
               echo "Passphrase: ${Username}"
               echo "Passphrase: ${Passphrase}"
-              echo "Passphrase: ${keyFile}"
-              echo "Passphrase: ${UserPrivateKeyID}"
+              echo "keyFile: ${keyFile}"
+              echo "UserPrivateKeyID: ${UserPrivateKeyID}"
                 }
             }
         }
