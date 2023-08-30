@@ -12,7 +12,7 @@ pipeline {
               steps {
                  copyArtifacts filter: '**/jsonfile.json', 
                      fingerprintArtifacts: true, 
-                     projectName: 'Instructure pipeline',
+                     projectName: 'Instructure pipeline'
               }
         }
     }
