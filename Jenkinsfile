@@ -17,22 +17,17 @@ pipeline {
         // }
 
         stage('Deploy') {
-            steps {
-                // Download the archived artifact
-                step ([$class: 'CopyArtifact',
-                    projectName: 'Instructure pipeline',
-                    filter: "**/*"]);
-                
-                // Read and print the content of the JSON file
-                // script {
-                //     def jsonFilePath = findFiles(glob: 'artifacts/*.json')[0]
-                //     def jsonContent = readFile(jsonFilePath.path)
-                //     echo "JSON Content:\n${jsonContent}"
-                // }
-                
-                // Add your deployment steps here
-                // For example, deploying the JSON content to a service
-            }
+              steps {
+        // Download the archived artifact
+        step([$class: 'CopyArtifact', projectName: 'YourJobName', filter: '*.json', target: 'artifacts'])
+        
+        // Read and print the content of the JSON file
+        // script {
+        //     def jsonFilePath = findFiles(glob: 'artifacts/*.json')[0]
+        //     def jsonContent = readFile(jsonFilePath.path)
+        //     echo "JSON Content:\n${jsonContent}"
+        // }
+              }
         }
     }
     
