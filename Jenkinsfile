@@ -1,27 +1,28 @@
 pipeline {
-    agent {
-         node {
-            label 'node2' 
-        }
-    }
+    agent any
     
     stages {
         stage ('artifact') {
+             agent {
+                 node {
+                    label 'node2' 
+                }
+            }
             steps {
                  archiveArtifacts artifacts: 'jsonfile.json', followSymlinks: false
             }
         }
 
-        stage('Deploy') {
-            steps {
-                bat 'dir'
-                 // copyArtifacts filter: 'jsonfile.json', 
-                 //     fingerprintArtifacts: true, 
-                 //     projectName: 'Instructure pipeline'
-                 //    target: '*/Artifacts'
-            }
+        // stage('Deploy') {
+        //     steps {
+        //         bat 'dir'
+        //          // copyArtifacts filter: 'jsonfile.json', 
+        //          //     fingerprintArtifacts: true, 
+        //          //     projectName: 'Instructure pipeline'
+        //          //    target: '*/Artifacts'
+        //     }
               
-        }
+        // }
     }
     
     post {
