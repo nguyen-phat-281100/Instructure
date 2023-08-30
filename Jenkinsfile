@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+         node {
+            label 'node2' 
+        }
+    }
     
     stages {
         stage ('artifact') {
