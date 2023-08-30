@@ -8,15 +8,15 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
-              steps {
-        // Download the archived artifact
-                 copyArtifacts filter: '**.json', 
-                     fingerprintArtifacts: true, 
-                     projectName: 'Instructure pipeline',
-                     target: 'C:\ProgramData\Jenkins\.jenkins\workspace\Instructure pipeline\artifact'
-              }
-        }
+        // stage('Deploy') {
+        //       steps {
+        // // Download the archived artifact
+        //          copyArtifacts filter: '**/jsonfile.json', 
+        //              fingerprintArtifacts: true, 
+        //              projectName: 'Instructure pipeline',
+        //              target: 'C:\ProgramData\Jenkins\.jenkins\workspace\Instructure pipeline\artifact'
+        //       }
+        // }
     }
     
     post {
