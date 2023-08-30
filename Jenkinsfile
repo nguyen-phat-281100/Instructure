@@ -9,6 +9,9 @@ pipeline {
         }
 
         stage('Deploy') {
+            script{
+                sh 'ls'
+            }
               steps {
                  copyArtifacts filter: '**/jsonfile.json', 
                      fingerprintArtifacts: true, 
