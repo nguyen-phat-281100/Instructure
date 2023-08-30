@@ -11,7 +11,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 bat 'dir'
-                bat 'mkdir Artifacts'
                 bat 'type jsonfile.json'
             }
               
