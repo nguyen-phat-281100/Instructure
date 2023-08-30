@@ -8,16 +8,16 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
-            steps {
-                bat 'dir'
-                 copyArtifacts filter: 'jsonfile.json', 
-                     fingerprintArtifacts: true, 
-                     projectName: 'Instructure pipeline'
-                    target: '*/Artifacts'
-            }
+        // stage('Deploy') {
+        //     steps {
+        //         bat 'dir'
+        //          copyArtifacts filter: 'jsonfile.json', 
+        //              fingerprintArtifacts: true, 
+        //              projectName: 'Instructure pipeline'
+        //             target: '*/Artifacts'
+        //     }
               
-        }
+        // }
     }
     
     post {
