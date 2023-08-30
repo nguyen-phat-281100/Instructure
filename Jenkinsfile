@@ -19,9 +19,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 // Download the archived artifact
-                step([$class: 'CopyArtifact', 
-                      projectName: 'Instructure pipeline', 
-                      filter: '*.json'])
+                step ([$class: 'CopyArtifact',
+                    projectName: 'Instructure pipeline',
+                    filter: "**/*"]);
                 
                 // Read and print the content of the JSON file
                 // script {
