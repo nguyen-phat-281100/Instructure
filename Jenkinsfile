@@ -18,7 +18,8 @@ pipeline {
               echo "Passphrase: ${Username}"
               echo "Passphrase: ${Passphrase}"
               echo "keyFile: ${keyFile}"
-              echo "UserPrivateKeyID: ${UserPrivateKeyID}"
+              echo "UserPrivateKeyID: ${username}"
+              echo "UserPrivateKeyID: ${pass}"
                 }
             }
         }
