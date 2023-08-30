@@ -13,7 +13,8 @@ pipeline {
         // Download the archived artifact
                  copyArtifacts filter: '**.json', 
                      fingerprintArtifacts: true, 
-                     projectName: 'Instructure pipeline'
+                     projectName: 'Instructure pipeline',
+                     target: 'C:\ProgramData\Jenkins\.jenkins\workspace\Instructure pipeline\artifact'
               }
         }
     }
