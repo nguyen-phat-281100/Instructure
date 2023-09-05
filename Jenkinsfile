@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        node('node2') {
+            build job: 'Instructure pipeline', parameters: [[$class: 'node2', name: 'node', label: 'node2']]
+        }
+    }
     
     stages {
         stage ('artifact') {
