@@ -14,11 +14,11 @@ pipeline {
         }
 
         stage('Deploy') {
-            // agent {
-            //      node {
-            //         label 'node2' 
-            //     }
-            // }
+            agent {
+                 node {
+                    label 'node2' 
+                }
+            }
             steps {
               copyArtifacts filter: '**/jsonfile.json', 
                   fingerprintArtifacts: true, 
