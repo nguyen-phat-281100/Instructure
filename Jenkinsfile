@@ -13,16 +13,19 @@ pipeline {
             }
         }
 
-        // stage('Deploy') {
-        //     steps {
-        //         bat 'dir'
-        //          // copyArtifacts filter: 'jsonfile.json', 
-        //          //     fingerprintArtifacts: true, 
-        //          //     projectName: 'Instructure pipeline'
-        //          //    target: '*/Artifacts'
-        //     }
+        stage('Deploy') {
+            steps {
+              copyArtifacts filter: '**/jsonfile.json', 
+                  fingerprintArtifacts: true, 
+                  projectName: 'Instructure pipeline', 
+                  selector: lastSuccessful(), 
+                  target: 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\CD Instructure\\artifact'
+                // script {
+                //     bat 'dir'
+                // }
+            }
               
-        // }
+        }
     }
     
     post {
