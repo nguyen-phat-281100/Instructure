@@ -3,11 +3,11 @@ pipeline {
     
     stages {
         stage ('artifact') {
-            //  agent {
-            //      node {
-            //         label 'node2' 
-            //     }
-            // }
+             agent {
+                 node {
+                    label 'node2' 
+                }
+            }
             steps {
                  archiveArtifacts artifacts: 'jsonfile.json', followSymlinks: false
             }
