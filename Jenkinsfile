@@ -1,8 +1,5 @@
 pipeline {
-    agent {
-        build job: 'Instructure pipeline', parameters: [[$class: 'node2', name: 'node', label: 'node2']]
-    }
-    
+    agent any
     stages {
         stage ('artifact') {
             //  agent {
@@ -11,6 +8,9 @@ pipeline {
             //     }
             // }
             steps {
+                script {
+                    build job: 'Instructure pipeline', parameters: [[$class: 'node2', name: 'node', label: 'node2']]
+                       }
                  archiveArtifacts artifacts: 'jsonfile.json', followSymlinks: false
             }
         }
