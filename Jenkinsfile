@@ -23,13 +23,12 @@ pipeline {
         stage('Docker push image into Dockerhub') {
             steps {
               script{
-                  withCredentials([usernamePassword(credentialsId: 'dockerhub_pwd', passwordVariable: 'dockerhub_pass', usernameVariable: 'dockerhub_user')]) {
-                     bat "docker logout"
+                  // withCredentials([usernamePassword(credentialsId: 'dockerhub_pwd', passwordVariable: 'dockerhub_pass', usernameVariable: 'dockerhub_user')]) {
                      bat "docker login -u 'phatphuong0123' -p 'Phatphuong0123'"
                      bat 'docker push phatphuong0123/instructure:ver4'
                       
                     //bat "echo Phatphuong0123 | docker login -u '${dockerhub_user}' --password-stdin"
-                  }
+                  // }
               }
             }
         }
