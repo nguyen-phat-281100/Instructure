@@ -15,14 +15,14 @@ pipeline {
             }
         }
 
-        stage('Docker build') {
-            steps {
-              script{
-                      bat 'docker build -t instructure .'
-                      bat 'docker image tag instructure phatphuong0123/instructure:ver4'
-              }
-            }
-        }
+        // stage('Docker build') {
+        //     steps {
+        //       script{
+        //               bat 'docker build -t instructure .'
+        //               bat 'docker image tag instructure phatphuong0123/instructure:ver4'
+        //       }
+        //     }
+        // }
         stage('Docker push image into Dockerhub') {
             steps {
               script{
