@@ -28,8 +28,9 @@ pipeline {
               script{
                   withCredentials([usernamePassword(credentialsId: 'dockerhub_pwd', passwordVariable: 'dockerhub_pass', usernameVariable: 'dockerhub_user')]) {
                 echo "password is ${dockerhub_pass}"
-                      bat 'docker login -u phatphuong0123 -p ${dockerhub_pass}'
-                      bat 'docker push phatphuong0123/instructure:ver4'
+                        bat '${dockerhub_pass}'
+                      // bat 'docker login -u phatphuong0123 -p ${dockerhub_pass}'
+                      // bat 'docker push phatphuong0123/instructure:ver4'
                   }
               }
             }
