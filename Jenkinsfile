@@ -18,6 +18,8 @@ pipeline {
                   echo "Docker Registry URL: env.DOCKER_REGISTRY"
                       bat 'docker build -t instructure .'
                       bat 'docker image tag instructure phatphuong0123/instructure:ver4'
+                  bat 'docker push phatphuong0123/instructure:ver4'
+
               }
             }
         }
