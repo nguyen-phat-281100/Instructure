@@ -15,23 +15,13 @@ pipeline {
             }
         }
 
-        // stage('Deploy') {
-        //     // agent {
-        //     //      node {
-        //     //         label 'node2' 
-        //     //     }
-        //     // }
-        //     steps {
-        //       copyArtifacts filter: '**/jsonfile.json', 
-        //           fingerprintArtifacts: true, 
-        //           projectName: 'Instructure pipeline', 
-        //           selector: lastSuccessful(), 
-        //           target: 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\CD Instructure\\artifact'
-        //         // script {
-        //         //     bat 'dir'
-        //         // }
-        //     }
-        // }
+        stage('Deploy') {
+            steps {
+              withCredentials([usernamePassword(credentialsId: 'dockerhub_pwd', passwordVariable: 'dockerhub_pass', usernameVariable: 'dockerhub_user')]) {
+    // some block
+}
+            }
+        }
     }
     
     post {
