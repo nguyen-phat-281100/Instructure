@@ -18,7 +18,7 @@ pipeline {
         stage('Deploy') {
             steps {
               withCredentials([usernamePassword(credentialsId: 'dockerhub_pwd', passwordVariable: 'dockerhub_pass', usernameVariable: 'dockerhub_user')]) {
-    echo '$usernameVariable'
+    echo 'password is $usernameVariable'
 }
             }
         }
