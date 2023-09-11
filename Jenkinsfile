@@ -25,7 +25,7 @@ pipeline {
             steps {
               script{
                   withCredentials([usernamePassword(credentialsId: 'dockerhub_pwd', passwordVariable: 'dockerhub_pass', usernameVariable: 'dockerhub_user')]) {
-                     bat "docker login"
+                     bat "docker info | grep Proxy"
                     //bat "echo Phatphuong0123 | docker login -u '${dockerhub_user}' --password-stdin"
                   }
               }
