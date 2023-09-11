@@ -17,9 +17,12 @@ pipeline {
 
         stage('Deploy') {
             steps {
-              withCredentials([usernamePassword(credentialsId: 'dockerhub_pwd', passwordVariable: 'dockerhub_pass', usernameVariable: 'dockerhub_user')]) {
-    echo "password is ${dockerhub_pass}"
-}
+              script{
+                  withCredentials([usernamePassword(credentialsId: 'dockerhub_pwd', passwordVariable: 'dockerhub_pass', usernameVariable: 'dockerhub_user')]) {
+                echo "password is ${dockerhub_pass}"
+                      sh 'dir'
+                  }
+              }
             }
         }
     }
