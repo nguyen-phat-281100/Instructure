@@ -12,26 +12,26 @@ pipeline {
             }
         }
 
-        // stage('Docker build') {
-        //     steps {
-        //       script{
-        //               bat 'docker build -t instructure .'
-        //               bat 'docker image tag instructure phatphuong0123/instructure:ver4'
-        //               bat 'docker push phatphuong0123/instructure:ver4'
-        //       }
-        //     }
-        // }
-        stage('Docker push image into Dockerhub') {
+        stage('Docker build') {
             steps {
               script{
-                  withCredentials([usernamePassword(credentialsId: 'dockerhub_pwd', passwordVariable: 'dockerhub_pass', usernameVariable: 'dockerhub_user')]) {
-                     bat "docker logout"
-                     bat "docker login -u 'phatphuong0123' -p 'Phatphuong0123'"
-                    //bat "echo Phatphuong0123 | docker login -u '${dockerhub_user}' --password-stdin"
-                  }
+                      bat 'docker build -t instructure .'
+                      bat 'docker image tag instructure phatphuong0123/instructure:ver4'
+                      bat 'docker push phatphuong0123/instructure:ver4'
               }
             }
         }
+        // stage('Docker push image into Dockerhub') {
+        //     steps {
+        //       script{
+        //           withCredentials([usernamePassword(credentialsId: 'dockerhub_pwd', passwordVariable: 'dockerhub_pass', usernameVariable: 'dockerhub_user')]) {
+        //              bat "docker logout"
+        //              bat "docker login -u 'phatphuong0123' -p 'Phatphuong0123'"
+        //             //bat "echo Phatphuong0123 | docker login -u '${dockerhub_user}' --password-stdin"
+        //           }
+        //       }
+        //     }
+        // }
     }
     
     post {
