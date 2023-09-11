@@ -27,7 +27,7 @@ pipeline {
                       echo "${dockerhub_pass}"
                       bat ""
                       $pass='phat'
-                      echo '$pass'
+                      echo $pass
                       echo '${dockerhub_pass}' | docker login -u '${dockerhub_user}' --password-stdin
                       ""
                   }
