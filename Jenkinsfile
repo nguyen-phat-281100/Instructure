@@ -21,6 +21,8 @@ pipeline {
                   withCredentials([usernamePassword(credentialsId: 'dockerhub_pwd', passwordVariable: 'dockerhub_pass', usernameVariable: 'dockerhub_user')]) {
                 echo "password is ${dockerhub_pass}"
                       bat 'docker ps'
+                      bat 'docker images ls'
+                      // bat 'docker ps'
                   }
               }
             }
