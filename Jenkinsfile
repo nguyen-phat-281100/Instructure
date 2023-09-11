@@ -24,11 +24,8 @@ pipeline {
             steps {
               script{
                   withCredentials([usernamePassword(credentialsId: 'dockerhub_pwd', passwordVariable: 'dockerhub_pass', usernameVariable: 'dockerhub_user')]) {
-                echo "password is '${dockerhub_pass}'"
-                      // sh "docker login -u '${DOCKER_USERNAME}' -p '${dockerhub_pass}'"
-                      bat "echo '${dockerhub_pass}' | docker login -u '${dockerhub_user}' --password-stdin"
-                      // bat "docker login -u '${dockerhub_user}' -p '${dockerhub_pass}'"
-                      // bat 'docker push phatphuong0123/instructure:ver4'
+                      echo "'${dockerhub_pass}'"
+                      // bat "echo '${dockerhub_pass}' | docker login -u '${dockerhub_user}' --password-stdin"
                   }
               }
             }
